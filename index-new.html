@@ -254,12 +254,16 @@
             display: none;
         }
         
-        /* Countdown Timer - Compact inline style */
+        /* Countdown Timer - Bottom position */
         .countdown-container {
             display: none;
-            margin-top: 10px;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
             animation: fadeIn 0.8s ease-out;
+            z-index: 10;
         }
         
         .envelope-container.opened ~ .countdown-container {
@@ -269,34 +273,34 @@
         .countdown-inline {
             display: inline-block;
             background: rgba(255, 255, 255, 0.95);
-            padding: 6px 15px;
-            border-radius: 20px;
-            box-shadow: 0 3px 10px rgba(196, 30, 58, 0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
             font-family: 'Roboto', sans-serif;
-            font-size: 13px;
+            font-size: 15px;
             color: #333;
             transition: all 0.3s;
         }
         
         .countdown-inline:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.5);
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.6);
         }
         
         .countdown-inline .emoji {
-            font-size: 14px;
+            font-size: 16px;
         }
         
         .countdown-inline strong {
             color: #c41e3a;
             font-weight: 700;
-            font-size: 15px;
-            margin: 0 2px;
+            font-size: 18px;
+            margin: 0 3px;
         }
         
         .countdown-inline .separator {
             color: #999;
-            margin: 0 4px;
+            margin: 0 6px;
         }
         
         @keyframes fadeInUp {
