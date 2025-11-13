@@ -254,6 +254,62 @@
             display: none;
         }
         
+        /* Countdown Timer - Compact inline style */
+        .countdown-container {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .envelope-container.opened ~ .countdown-container {
+            display: block;
+        }
+        
+        .countdown-inline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 15px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(196, 30, 58, 0.3);
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .countdown-inline:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.5);
+        }
+        
+        .countdown-inline .emoji {
+            font-size: 14px;
+        }
+        
+        .countdown-inline strong {
+            color: #c41e3a;
+            font-weight: 700;
+            font-size: 15px;
+            margin: 0 2px;
+        }
+        
+        .countdown-inline .separator {
+            color: #999;
+            margin: 0 4px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         @keyframes pulseText {
             0%, 100% {
                 opacity: 0.6;
@@ -1325,6 +1381,19 @@
             <!-- Layer 4: Nắp thiệp (đè lên trên cùng) -->
             <img src="images/thiep_opening.png" alt="Nắp thiệp mở" class="envelope-image opening envelope-layer">
         </div>
+        
+        <!-- Countdown Timer - Compact -->
+        <div class="countdown-container" id="countdownContainer">
+            <div class="countdown-inline">
+                <span class="emoji">💕</span>
+                <strong id="days">00</strong> ngày
+                <span class="separator">•</span>
+                <strong id="hours">00</strong> giờ
+                <span class="separator">•</span>
+                <strong id="minutes">00</strong> phút
+                <span class="emoji">💕</span>
+            </div>
+        </div>
        
     </div>
 
@@ -1637,6 +1706,31 @@
                 document.querySelector('.container').classList.add('blur');
             }
         });
+        
+        // Countdown Timer - Compact version
+        const weddingDate = new Date('2025-11-30T10:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            if (distance < 0) {
+                document.querySelector('.countdown-inline').innerHTML = '<span class="emoji">💑</span> Đã đến ngày trọng đại! <span class="emoji">💑</span>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('days').textContent = String(days);
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        }
+        
+        // Cập nhật countdown mỗi phút
+        setInterval(updateCountdown, 60000);
+        updateCountdown(); // Chạy ngay lần đầu
 
         // Music Toggle
         const audio = document.getElementById('bgMusic');

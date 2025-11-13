@@ -48,7 +48,7 @@ const weddingConfig = {
     // THÔNG TIN NGÀY CƯỚI
     // ==========================================
     wedding: {
-        date: "2025-03-30",                     // Định dạng: YYYY-MM-DD
+        date: "2025-11-30",                     // Định dạng: YYYY-MM-DD
         time: "10:00",                          // Giờ tổ chức (24h format)
         dayOfWeek: "Thứ Sáu",                   // Thứ trong tuần
         lunarDate: "Ngày 02 Tháng 03 Năm Ất Tỵ", // Âm lịch
