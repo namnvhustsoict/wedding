@@ -995,13 +995,298 @@
         }
         
         /* Responsive */
+        
+        /* Desktop - Large screens */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 500px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 64px;
+            }
+            
+            .hero-date {
+                font-size: 56px;
+            }
+            
+            .hero-year {
+                font-size: 40px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .envelope-container {
+                max-width: 500px;
+            }
+        }
+        
+        /* Laptop/Desktop - Medium screens */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .container {
+                max-width: 480px;
+            }
+            
+            .envelope-container {
+                max-width: 450px;
+            }
+            
+            .hero-envelope {
+                max-width: 450px;
+            }
+            
+            .section {
+                padding: 70px 30px;
+            }
+        }
+        
+        /* Tablet - Medium screens */
+        @media (max-width: 767px) {
+            .container {
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .hero-subtitle {
+                font-size: 48px;
+            }
+            
+            .hero-names .name {
+                font-size: 32px;
+            }
+            
+            .hero-date {
+                font-size: 42px;
+            }
+            
+            .hero-year {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section {
+                padding: 50px 20px;
+            }
+            
+            .envelope-container {
+                max-width: 380px;
+            }
+            
+            .parents-grid {
+                gap: 15px;
+            }
+        }
+        
+        /* Mobile - Small screens */
         @media (max-width: 480px) {
-            .hero h1 { font-size: 60px; }
-            .hero .names { font-size: 28px; }
-            .section-title { font-size: 28px; }
-            .parents-grid { grid-template-columns: 1fr; }
-            .envelope-container { width: 300px; height: 200px; }
-            .invitation-card { font-size: 12px; }
+            .container {
+                box-shadow: none;
+            }
+            
+            .hero {
+                padding: 30px 15px;
+            }
+            
+            .hero-title {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+            
+            .hero-subtitle {
+                font-size: 40px;
+            }
+            
+            .hero-envelope {
+                max-width: 320px;
+            }
+            
+            .hero-names {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            
+            .hero-names .divider {
+                width: 60px;
+            }
+            
+            .hero-names .name {
+                font-size: 28px;
+            }
+            
+            .hero-names .heart {
+                font-size: 28px;
+            }
+            
+            .hero-date {
+                font-size: 36px;
+            }
+            
+            .hero-year {
+                font-size: 28px;
+            }
+            
+            .hero-double-happiness {
+                font-size: 48px;
+                margin-top: 50px;
+            }
+            
+            .corner-decoration {
+                font-size: 60px;
+            }
+            
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .envelope-container {
+                max-width: 320px;
+                width: 85%;
+            }
+            
+            .parents-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .parent-card {
+                padding: 15px;
+            }
+            
+            .parent-card h3 {
+                font-size: 16px;
+            }
+            
+            .parent-card p {
+                font-size: 13px;
+            }
+            
+            .event-info {
+                padding: 20px;
+            }
+            
+            .event-info h3 {
+                font-size: 18px;
+            }
+            
+            .event-info p {
+                font-size: 14px;
+            }
+            
+            .gallery-grid {
+                gap: 8px;
+            }
+            
+            .rsvp-form {
+                padding: 0 10px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .btn-submit {
+                padding: 12px 30px;
+                font-size: 15px;
+            }
+            
+            .bank-card {
+                padding: 20px;
+            }
+            
+            .bank-card h3 {
+                font-size: 20px;
+            }
+            
+            .bank-card .account-number {
+                font-size: 20px;
+            }
+            
+            .music-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                left: 15px;
+            }
+            
+            .music-toggle img {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .footer h3 {
+                font-size: 24px;
+            }
+            
+            .footer div {
+                font-size: 28px;
+            }
+            
+            .gift-content {
+                padding: 30px 20px;
+            }
+            
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+        
+        /* Mobile - Extra small screens */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 22px;
+            }
+            
+            .hero-subtitle {
+                font-size: 36px;
+            }
+            
+            .hero-envelope {
+                max-width: 280px;
+            }
+            
+            .hero-names .name {
+                font-size: 24px;
+            }
+            
+            .hero-date {
+                font-size: 32px;
+            }
+            
+            .hero-year {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .envelope-container {
+                max-width: 280px;
+            }
         }
     </style>
 </head>
