@@ -1378,6 +1378,7 @@
             align-items: center !important;
             justify-content: center !important;
             margin: 0 !important;
+            position: relative !important; /* for absolute positioning of label */
         }
 
         /* Smaller circles, tighter typography, and stacking so labels are not hidden
@@ -1393,12 +1394,23 @@
             font-size: 20px !important; /* number size */
             line-height: 1 !important;
             padding: 0 !important;
+            margin: 0 !important;
+            position: absolute !important; /* center in circle */
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            text-align: center !important;
+            width: auto !important;
+            min-width: 0 !important;
         }
 
         .countdown-inline .countdown-item small {
             font-size: 11px !important; /* label size */
-            margin-top: 8px !important; /* push label below number */
             color: rgba(0,0,0,0.55) !important;
+            position: absolute !important; /* pin to bottom */
+            bottom: 10% !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
         }
 
         /* Keep the translucent band but ensure it's behind content */
