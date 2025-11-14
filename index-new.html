@@ -271,18 +271,21 @@
         }
         
         .countdown-inline {
-            display: inline-block;
-            padding: 10px 20px;
-        
+            display: inline-flex;
+            padding: 0; /* remove card padding */
+            background: transparent; /* ensure no background */
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
             color: #333;
-            transition: all 0.3s;
+            transition: none; /* disable default transform */
+            gap: 12px;
+            align-items: center;
         }
-        
+
+        /* remove hover card/scale effect */
         .countdown-inline:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.6);
+            transform: none;
+            box-shadow: none;
         }
         
         .countdown-inline .emoji {
@@ -1404,9 +1407,7 @@
             bottom: 6% !important;
             left: 8% !important;
             right: 8% !important;
-            background: rgba(255,255,255,0.5) !important;
-            backdrop-filter: blur(4px) !important;
-            -webkit-backdrop-filter: blur(4px) !important;
+           
             z-index: 0 !important; /* behind */
         }
 
