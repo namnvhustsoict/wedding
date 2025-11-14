@@ -556,14 +556,14 @@ body {
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background: linear-gradient(180deg, rgba(255,242,248,0.9), rgba(255,248,250,0.95));
+  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 12px 30px rgba(196,30,58,0.12), inset 0 -6px 12px rgba(255,255,255,0.7);
-    border: 2px solid rgba(196,30,58,0.06);
+
+    border: 2px solid rgba(196,30,58,0.2);
     color: var(--primary-color);
 }
 
@@ -590,7 +590,6 @@ body {
     height: 34%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background: rgba(255,255,255,0.45);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     pointer-events: none;
@@ -1003,7 +1002,7 @@ body {
 .wish-item {
     display: flex;
     gap: 20px;
-    background: white;
+   
     padding: 25px;
     border-radius: 15px;
     box-shadow: var(--shadow);
