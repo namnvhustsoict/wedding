@@ -605,11 +605,14 @@ body {
 /* Hint text appearing above compact countdown */
 .countdown-hint {
     text-align: center;
-    color: rgba(255, 52, 79, 0.45);
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+    color: rgba(255, 52, 79, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 0 2px 4px rgba(196, 30, 58, 0.1);
+    animation: fadeInGlow 1.2s ease-in-out;
 }
 
 @media (max-width: 480px) {
