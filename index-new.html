@@ -1465,6 +1465,25 @@
         </div>
     </div>
 
+    <!-- Gift Popup -->
+    <div class="gift-popup" id="giftPopup">
+        <div class="gift-content">
+            <div class="gift-close" onclick="closeGiftPopup()">×</div>
+            <h3 style="text-align: center; color: #c41e3a; margin-bottom: 20px;">🎁 Thông Tin Chuyển Khoản</h3>
+            <div class="bank-card" style="margin: 0;">
+                <h3>🏦 MB Bank</h3>
+                <p><strong>Chủ tài khoản:</strong></p>
+                <p>NGUYEN ANH TU</p>
+                <div class="account-number">8838683860</div>
+                <button onclick="copyAccount()" style="background: #fff; color: #c41e3a; padding: 10px 30px; border: none; border-radius: 25px; font-weight: 500; cursor: pointer; margin-top: 10px;">
+                    📋 Sao chép STK
+                </button>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="images/qr-code.png" alt="QR Code" style="max-width: 200px; border-radius: 10px;">
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <!-- Hero Section - Thiết kế với ảnh nền -->
@@ -1588,6 +1607,52 @@
             </div>
         </section>
 
+        <!-- RSVP Section -->
+        <section class="section scroll-reveal" style="background: #f9f9f9;">
+            <h2 class="section-title">✍️ Xác Nhận Tham Dự</h2>
+                <p style="text-align: center; margin-bottom: 30px;">
+                Sự hiện diện của bạn là niềm vinh hạnh cho chúng tôi!<br>
+                Vui lòng xác nhận tham dự trước ngày <strong>30/11/2025</strong>
+            </p>
+            
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Tên của bạn *</label>
+                    <input type="text" id="name" name="name" required placeholder="Nhập tên đầy đủ">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="form-group">
+                    <label for="relation">Bạn là gì của Dâu Rể?</label>
+                    <input type="text" id="relation" name="relation" placeholder="Ví dụ: Bạn học, đồng nghiệp, họ hàng...">
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance">Xác nhận tham dự *</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="yes">✅ Có thể tham dự</option>
+                        <option value="no">❌ Không thể tham dự</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Số lượng khách</label>
+                    <input type="number" id="guests" name="guests" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Gửi lời chúc đến Dâu Rể</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Nhập lời chúc mừng của bạn..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">💌 Gửi Xác Nhận</button>
+            </form>
+        </section>
 
         <!-- Footer -->
         <footer class="footer">
