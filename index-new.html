@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         /* CSS Cao cấp với đầy đủ Animation */
@@ -521,6 +521,42 @@
             height: 70%;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
             z-index: 2;
+        }
+        
+        /* Hero Names at Top */
+        .hero-names-top {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+             color: #000;
+            text-shadow: 0 2px 10px ,rgba(105, 105, 105, 0.5);
+        }
+        
+        .hero-names-top .wedding-label {
+        
+            font-family: 'Great Vibes', cursive;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #4b4b4b;
+        }
+        
+        .hero-names-top .bride-groom {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            margin-bottom: 5px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+        
+        .hero-names-top .wedding-symbol {
+            font-size: 20px;
+            margin: 0 15px;
+            color: #000;
+            animation: pulse 2s infinite;
         }
         
         
@@ -1152,6 +1188,20 @@
                 font-size: 26px;
             }
             
+            .hero-names-top {
+                top: 20px;
+            }
+            
+            
+            .hero-names-top .bride-groom {
+                font-size: 28px;
+            }
+            
+            .hero-names-top .wedding-symbol {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            
             .envelope-container {
                 max-width: 320px;
                 width: 85%;
@@ -1290,6 +1340,19 @@
             .envelope-container {
                 max-width: 280px;
             }
+            
+            .hero-names-top {
+                top: 15px;
+            }
+            
+            .hero-names-top .bride-groom {
+                font-size: 24px;
+            }
+            
+            .hero-names-top .wedding-symbol {
+                font-size: 14px;
+                margin: 0 8px;
+            }
 
         }
 
@@ -1397,16 +1460,6 @@
         <div class="heart">💕</div>
         <div class="heart">💕</div>
         <div class="heart">💕</div>
-         <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
-         <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
-        <div class="heart">💕</div>
     </div>
 
     <!-- Welcome Popup - Envelope với ảnh thật và layering -->
@@ -1465,25 +1518,7 @@
         </div>
     </div>
 
-    <!-- Gift Popup -->
-    <div class="gift-popup" id="giftPopup">
-        <div class="gift-content">
-            <div class="gift-close" onclick="closeGiftPopup()">×</div>
-            <h3 style="text-align: center; color: #c41e3a; margin-bottom: 20px;">🎁 Thông Tin Chuyển Khoản</h3>
-            <div class="bank-card" style="margin: 0;">
-                <h3>🏦 MB Bank</h3>
-                <p><strong>Chủ tài khoản:</strong></p>
-                <p>NGUYEN ANH TU</p>
-                <div class="account-number">8838683860</div>
-                <button onclick="copyAccount()" style="background: #fff; color: #c41e3a; padding: 10px 30px; border: none; border-radius: 25px; font-weight: 500; cursor: pointer; margin-top: 10px;">
-                    📋 Sao chép STK
-                </button>
-            </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <img src="images/qr-code.png" alt="QR Code" style="max-width: 200px; border-radius: 10px;">
-            </div>
-        </div>
-    </div>
+   
 
     <div class="container">
         <!-- Hero Section - Thiết kế với ảnh nền -->
@@ -1492,6 +1527,14 @@
             <div class="hero-background-image">
                 <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/502464975_1365186551255900_1540551525817462141_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Jwo5feZ-rQ4Q7kNvwE42W7Y&_nc_oc=Adml8JuvhD9WQVihbVSWULwoWPvjUqoGAe94MzFBompm_Ipl4IVj8HgdUUf900rviv0&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=DepsHSpU4rTXvBHBSoARHA&oh=00_AfiGVdyL73PqkMMrWfhaeOGfLHHf8RK__nnS5aoDFbptUA&oe=691C6AD4" 
                      alt="Văn Công & Anh Thơ">
+            </div>
+            
+            <!-- Tên cô dâu chú rể ở đầu -->
+            <div class="hero-names-top">
+                <div class="wedding-label">Đám cưới</div>
+                <div class="bride-groom">
+                    Văn Công & Anh Thơ
+                </div>
             </div>
             
             <!-- Content ở bottom của hero-background-image -->
