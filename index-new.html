@@ -272,10 +272,8 @@
         
         .countdown-inline {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.95);
             padding: 10px 20px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+        
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
             color: #333;
@@ -1349,6 +1347,81 @@
             .envelope-container {
                 max-width: 280px;
             }
+
+        }
+
+        /* Force countdown-inline children to lay out horizontally
+           We use !important here to override external stylesheet rules
+           since the user requested changes only inside this file. */
+        .countdown-container, #countdownContainer {
+            background: transparent !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .countdown-inline {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 14px !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .countdown-inline .countdown-item {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+        }
+
+        /* Smaller circles, tighter typography, and stacking so labels are not hidden
+           These are document-level overrides (use !important to beat external stylesheet). */
+        .countdown-inline .countdown-item {
+            --size: 86px !important; /* smaller circle diameter */
+            width: var(--size) !important;
+            height: var(--size) !important;
+            margin: 0 6px !important;
+        }
+
+        .countdown-inline .countdown-item strong {
+            font-size: 20px !important; /* number size */
+            line-height: 1 !important;
+            padding: 0 !important;
+        }
+
+        .countdown-inline .countdown-item small {
+            font-size: 11px !important; /* label size */
+            margin-top: 8px !important; /* push label below number */
+            color: rgba(0,0,0,0.55) !important;
+        }
+
+        /* Keep the translucent band but ensure it's behind content */
+        .countdown-inline .countdown-item::after {
+            height: 28% !important;
+            bottom: 6% !important;
+            left: 8% !important;
+            right: 8% !important;
+            background: rgba(255,255,255,0.5) !important;
+            backdrop-filter: blur(4px) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
+            z-index: 0 !important; /* behind */
+        }
+
+        /* Ensure visible foreground for number + label */
+        .countdown-inline .countdown-item > * {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        /* Mobile: even smaller */
+        @media (max-width: 480px) {
+            .countdown-inline .countdown-item { --size: 64px !important; }
+            .countdown-inline .countdown-item strong { font-size: 16px !important; }
+            .countdown-inline .countdown-item small { font-size: 10px !important; margin-top: 6px !important; }
+            .countdown-inline { gap: 10px !important; }
         }
     </style>
 </head>
@@ -1405,17 +1478,25 @@
         <div class="countdown-container" id="countdownContainer">
             <div class="countdown-hint">Ngày cưới đang đến gần</div>
             <div class="countdown-inline">
-               
-                <strong id="days">00</strong> ngày
-                 <span class="emoji">💕</span>
-                <strong id="hours">00</strong> giờ
-                <span class="emoji">💕</span>
-                <strong id="minutes">00</strong> phút
-             
-                <span class="separator"><br></span>
-              
-                <strong id="seconds">00</strong> giây
-               
+                <div class="countdown-item">
+                    <strong id="days">00</strong>
+                    <small>Ngày</small>
+                </div>
+
+                <div class="countdown-item">
+                    <strong id="hours">00</strong>
+                    <small>Giờ</small>
+                </div>
+
+                <div class="countdown-item">
+                    <strong id="minutes">00</strong>
+                    <small>Phút</small>
+                </div>
+
+                <div class="countdown-item">
+                    <strong id="seconds">00</strong>
+                    <small>Giây</small>
+                </div>
             </div>
         </div>
        
