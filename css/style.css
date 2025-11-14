@@ -453,7 +453,7 @@ body {
 .countdown-container {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
+    margin-bottom: 32px;
 }
 
 .countdown-inline {
@@ -486,6 +486,16 @@ body {
 .countdown-inline .separator {
     color: var(--text-muted);
     margin: 0 6px;
+}
+
+/* Hint text appearing above compact countdown */
+.countdown-hint {
+    text-align: center;
+    color: rgba(255, 52, 79, 0.45);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
 @media (max-width: 480px) {
