@@ -87,29 +87,98 @@ body {
     min-height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
                 url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
 }
 
-.hero-overlay {
-    position: absolute;
+
+.hero-background-image {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%);
+    z-index: 0;
 }
 
+.hero-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Hero Content - positioned at bottom */
 .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
     text-align: center;
-    padding: 40px;
-  
+    color: #333;
+    padding: 100px 0px 0px 0px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7), transparent);
+    border-radius: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 160px;
+}
+
+
+
+/* Hide the overlay divs since we're using pseudo-elements */
+.hero-overlay,
+.hero-gradient-bottom {
+    display: none;
+}
+
+/* Hero Content Elements - Wedding Style từ bottom to top */
+.hero-invitation-label {
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #000000;
+    text-transform: lowercase;
+    order: 4;
     position: relative;
-    z-index: 2;
-    backdrop-filter: blur(10px);
+}
+
+
+.hero-time-info {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(139, 90, 60, 0.3);
+    letter-spacing: 2px;
+    order: 3;
+    line-height: 1;
+}
+
+.hero-date-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #000000;
+   
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(139, 90, 60, 0.3);
+    order: 2;
+    position: relative;
+    animation: zoomIn 1s 0.7s backwards;
+    line-height: 1;
+}
+
+.hero-bottom-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 16px;
+    color: #000000;
+    order: 1;
+    font-style: italic;    
 }
 
 .wedding-title {
@@ -1399,9 +1468,6 @@ body {
         font-size: 1.5rem;
     }
 
-    .hero-content {
-        padding: 30px 20px;
-    }
 
     .scroll-indicator {
         display: none;
