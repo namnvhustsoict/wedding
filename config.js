@@ -21,12 +21,12 @@ const weddingConfig = {
         },
         bride: {
             fullName: "Nguyễn Thị Thơ",          // Tên đầy đủ cô dâu
-            firstName: "Anh Thơ",               // Tên gọi ngắn
+            firstName: "Nguyễn Thơ",               // Tên gọi ngắn
             phone: "0888888888",                 // Số điện thoại (tùy chọn)
             facebook: "",                        // Link Facebook (tùy chọn)
             instagram: "",                       // Link Instagram (tùy chọn)
         }
-    },
+    }, 
 
     // ==========================================
     // THÔNG TIN PHỤ HUYNH
@@ -35,11 +35,11 @@ const weddingConfig = {
         groom: {
             father: "Ông Nguyễn Văn Chiến",           // Tên bố chú rể
             mother: "Bà Nguyễn Thị Thảo",        // Tên mẹ chú rể
-            address: "Tư Thế, Trí Quả, Thuận Thành, Bắc Ninh" // Địa chỉ nhà trai
+            address: "Tư Thế, Trí Quả, Bắc Ninh" // Địa chỉ nhà trai
         },
         bride: {
-            father: "Ông [Tên Bố]",             // Tên bố cô dâu - THAY ĐỔI
-            mother: "Bà [Tên Mẹ]",              // Tên mẹ cô dâu - THAY ĐỔI
+            father: "Ông Nguyễn Văn Huấn",             // Tên bố cô dâu - THAY ĐỔI
+            mother: "Bà Nguyễn Thị Thi",              // Tên mẹ cô dâu - THAY ĐỔI
             address: "Thuận Thành, Bắc Ninh" // Địa chỉ nhà gái - THAY ĐỔI
         }
     },
@@ -49,9 +49,9 @@ const weddingConfig = {
     // ==========================================
     wedding: {
         date: "2025-11-30",                     // Định dạng: YYYY-MM-DD
-        time: "10:00",                          // Giờ tổ chức (24h format)
-        dayOfWeek: "Thứ Sáu",                   // Thứ trong tuần
-        lunarDate: "ngày 11 tháng 10 âm lịch năm Ất Tỵ", // Âm lịch
+        time: "13:00",                          // Giờ tổ chức (24h format)
+        dayOfWeek: "Chủ Nhật",                   // Thứ trong tuần
+        lunarDate: "ngày 11 tháng 10 năm Ất Tỵ", // Âm lịch
         
         // Hiển thị đẹp
         displayDate: {
@@ -123,13 +123,13 @@ const weddingConfig = {
     // ==========================================
     banking: {
         bank: {
-            name: "MB Bank",                    // Tên ngân hàng
-            shortName: "MBBank",                // Tên viết tắt
+            name: "k",                    // Tên ngân hàng
+            shortName: "",                // Tên viết tắt
             logo: "🏦"                          // Icon/Emoji
         },
         account: {
-            name: "NGUYEN ANH TU",              // Tên chủ tài khoản (IN HOA)
-            number: "8838683860",               // Số tài khoản
+            name: "",              // Tên chủ tài khoản (IN HOA)
+            number: "",               // Số tài khoản
             branch: ""                          // Chi nhánh (tùy chọn)
         }
     },
@@ -158,9 +158,9 @@ const weddingConfig = {
         
         // Màu chủ đạo (tùy chỉnh trong CSS)
         theme: {
-            primaryColor: "#c41e3a",           // Màu đỏ chủ đạo
+            primaryColor: "#ffffffff",           // Màu đỏ chủ đạo
             secondaryColor: "#fff5f5",         // Màu hồng nhạt
-            accentColor: "#8b0000"             // Màu đỏ đậm
+            accentColor: "#ffffffff"             // Màu đỏ đậm
         }
     },
 
