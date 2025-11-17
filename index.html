@@ -550,6 +550,17 @@
             object-position: center;
         }
         
+        /* Desktop landscape - Ảnh dọc fill theo chiều cao */
+        @media (min-width: 769px) and (orientation: landscape) {
+            .hero-background-image img {
+                width: auto;
+                height: 100%;
+               
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        
         .hero-overlay {
             position: absolute;
             top: 0;
