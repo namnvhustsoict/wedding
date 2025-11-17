@@ -1682,6 +1682,37 @@
             <div style="width: 60px; height: 2px; background: linear-gradient(to right, transparent, #c41e3a, transparent); margin: 15px auto 10px;"></div>
             <div style="font-family: 'Dancing Script', cursive; font-size: 14px; font-style: italic; color: #272727; margin-top: 8px;">(Tức Ngày 25 Tháng 10 Năm Ất Tỵ)</div>
             
+            <!-- Countdown Timer -->
+            <div style=" border-top: 1px dashed rgba(196, 30, 58, 0.2);">
+                <div style="font-family: 'Dancing Script', cursive; font-size: 16px; color: #666; margin-bottom: 15px;">Đếm ngược đến ngày cưới</div>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <div style="text-align: center;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(196, 30, 58, 0.4); border-radius: 50%; background: rgba(255, 255, 255, 0.9);">
+                            <span id="eventDays" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #c41e3a;">00</span>
+                        </div>
+                        <div style="font-family: 'Dancing Script', cursive; font-size: 10px; color: #666; margin-top: 4px;">Ngày</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(196, 30, 58, 0.4); border-radius: 50%; background: rgba(255, 255, 255, 0.9);">
+                            <span id="eventHours" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #c41e3a;">00</span>
+                        </div>
+                        <div style="font-family: 'Dancing Script', cursive; font-size: 10px; color: #666; margin-top: 4px;">Giờ</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(196, 30, 58, 0.4); border-radius: 50%; background: rgba(255, 255, 255, 0.9);">
+                            <span id="eventMinutes" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #c41e3a;">00</span>
+                        </div>
+                        <div style="font-family: 'Dancing Script', cursive; font-size: 10px; color: #666; margin-top: 4px;">Phút</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(196, 30, 58, 0.4); border-radius: 50%; background: rgba(255, 255, 255, 0.9);">
+                            <span id="eventSeconds" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #c41e3a;">00</span>
+                        </div>
+                        <div style="font-family: 'Dancing Script', cursive; font-size: 10px; color: #666; margin-top: 4px;">Giây</div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         
         <!-- Gallery Section -->
@@ -1827,6 +1858,33 @@
         // Cập nhật countdown mỗi giây (thêm giây)
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Chạy ngay lần đầu
+
+        // Event Details Countdown
+        function updateEventCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('eventDays').textContent = '00';
+                document.getElementById('eventHours').textContent = '00';
+                document.getElementById('eventMinutes').textContent = '00';
+                document.getElementById('eventSeconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('eventDays').textContent = String(days).padStart(2, '0');
+            document.getElementById('eventHours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('eventMinutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('eventSeconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        setInterval(updateEventCountdown, 1000);
+        updateEventCountdown();
 
         // Music Toggle
         const audio = document.getElementById('bgMusic');
