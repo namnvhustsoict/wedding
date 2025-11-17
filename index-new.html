@@ -1127,6 +1127,19 @@
             animation: slideInFromRight 0.8s ease-out forwards;
         }
         
+        /* Parent Section Animations */
+        .parent-section {
+            opacity: 0;
+        }
+        
+        .parent-section.slide-in-left {
+            animation: slideInFromLeft 2s ease-out forwards;
+        }
+        
+        .parent-section.slide-in-right {
+            animation: slideInFromRight 2s ease-out forwards;
+        }
+        
         /* Responsive */
         
         /* Desktop - Large screens */
@@ -2085,6 +2098,27 @@
         
         document.querySelectorAll('.gallery-item').forEach(item => {
             galleryObserver.observe(item);
+        });
+        
+        // Parent Section Animation
+        const parentSectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    if (section.classList.contains('groom-side')) {
+                        section.classList.add('slide-in-left');
+                    } else if (section.classList.contains('bride-side')) {
+                        section.classList.add('slide-in-right');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        document.querySelectorAll('.parent-section').forEach(section => {
+            parentSectionObserver.observe(section);
         });
         
         // Smooth Scroll
