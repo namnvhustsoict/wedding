@@ -738,7 +738,6 @@ body {
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
   
     box-shadow: var(--shadow);
     cursor: pointer;
